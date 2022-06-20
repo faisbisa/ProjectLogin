@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220620 22:03:28.451" rpa="false" schemaversion="3">
+<suite id="s1" name="Login" source="C:\Users\admin\Documents\QA Engineer\ProjectRF\login.robot">
+<test id="s1-t1" name="User login with email and password valid" line="18">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${base_url}</arg>
+<arg>${browser_type}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220620 22:03:28.731" level="INFO">Opening browser 'Chrome' to base url 'https://pub-eish-dev.keponet.com/frontend/login'.</msg>
+<status status="PASS" starttime="20220620 22:03:28.731" endtime="20220620 22:03:37.561"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220620 22:03:37.562" endtime="20220620 22:03:37.696"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="email"]</arg>
+<arg>${email_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220620 22:03:37.696" level="INFO">Typing text 'jenareishsatu@yopmail.com' into text field '//input[@id="email"]'.</msg>
+<status status="PASS" starttime="20220620 22:03:37.696" endtime="20220620 22:03:37.847"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="password"]</arg>
+<arg>${password_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220620 22:03:37.849" level="INFO">Typing text '12345678' into text field '//input[@id="password"]'.</msg>
+<status status="PASS" starttime="20220620 22:03:37.848" endtime="20220620 22:03:37.946"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@type="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220620 22:03:37.947" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20220620 22:03:37.947" endtime="20220620 22:03:38.997"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//img[@id="menu-logo"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220620 22:03:39.030" level="INFO">Element '//img[@id="menu-logo"]' is displayed.</msg>
+<status status="PASS" starttime="20220620 22:03:38.998" endtime="20220620 22:03:39.030"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220620 22:03:39.031" endtime="20220620 22:03:41.260"/>
+</kw>
+<status status="PASS" starttime="20220620 22:03:28.725" endtime="20220620 22:03:41.260"/>
+</test>
+<test id="s1-t2" name="User login with email valid and password unvalid" line="25">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${base_url}</arg>
+<arg>${browser_type}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220620 22:03:41.270" level="INFO">Opening browser 'Chrome' to base url 'https://pub-eish-dev.keponet.com/frontend/login'.</msg>
+<status status="PASS" starttime="20220620 22:03:41.268" endtime="20220620 22:03:55.180"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220620 22:03:55.181" endtime="20220620 22:03:55.325"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="email"]</arg>
+<arg>${email_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220620 22:03:55.325" level="INFO">Typing text 'jenareishsatu@yopmail.com' into text field '//input[@id="email"]'.</msg>
+<status status="PASS" starttime="20220620 22:03:55.325" endtime="20220620 22:03:55.496"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="password"]</arg>
+<arg>${invalid_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220620 22:03:55.499" level="INFO">Typing text '1234567' into text field '//input[@id="password"]'.</msg>
+<status status="PASS" starttime="20220620 22:03:55.497" endtime="20220620 22:03:55.591"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@type="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220620 22:03:55.592" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20220620 22:03:55.592" endtime="20220620 22:03:55.836"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>//div[@class="alert alert-danger text-danger"]</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<msg timestamp="20220620 22:03:55.855" level="INFO">Element '//div[@class="alert alert-danger text-danger"]' did not exist.</msg>
+<status status="PASS" starttime="20220620 22:03:55.836" endtime="20220620 22:03:55.855"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220620 22:03:55.856" endtime="20220620 22:03:58.077"/>
+</kw>
+<status status="PASS" starttime="20220620 22:03:41.265" endtime="20220620 22:03:58.077"/>
+</test>
+<test id="s1-t3" name="User login with email unvalid and password valid" line="33">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${base_url}</arg>
+<arg>${browser_type}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220620 22:03:58.086" level="INFO">Opening browser 'Chrome' to base url 'https://pub-eish-dev.keponet.com/frontend/login'.</msg>
+<status status="PASS" starttime="20220620 22:03:58.084" endtime="20220620 22:04:08.326"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220620 22:04:08.327" endtime="20220620 22:04:08.473"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="email"]</arg>
+<arg>${invalid_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220620 22:04:08.474" level="INFO">Typing text 'jenareish@yopmail.com' into text field '//input[@id="email"]'.</msg>
+<status status="PASS" starttime="20220620 22:04:08.473" endtime="20220620 22:04:08.596"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="password"]</arg>
+<arg>${password_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220620 22:04:08.597" level="INFO">Typing text '12345678' into text field '//input[@id="password"]'.</msg>
+<status status="PASS" starttime="20220620 22:04:08.597" endtime="20220620 22:04:08.686"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@type="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220620 22:04:08.687" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20220620 22:04:08.687" endtime="20220620 22:04:08.983"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>//img[@id="menu-logo"]</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<msg timestamp="20220620 22:04:09.000" level="INFO">Element '//img[@id="menu-logo"]' did not exist.</msg>
+<status status="PASS" starttime="20220620 22:04:08.984" endtime="20220620 22:04:09.000"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220620 22:04:09.001" endtime="20220620 22:04:11.226"/>
+</kw>
+<status status="PASS" starttime="20220620 22:03:58.082" endtime="20220620 22:04:11.226"/>
+</test>
+<test id="s1-t4" name="User login without filling email and password" line="41">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${base_url}</arg>
+<arg>${browser_type}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220620 22:04:11.234" level="INFO">Opening browser 'Chrome' to base url 'https://pub-eish-dev.keponet.com/frontend/login'.</msg>
+<status status="PASS" starttime="20220620 22:04:11.233" endtime="20220620 22:04:14.964"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220620 22:04:14.965" endtime="20220620 22:04:15.112"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="email"]</arg>
+<arg>${notFilling_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220620 22:04:15.112" level="INFO">Typing text '' into text field '//input[@id="email"]'.</msg>
+<status status="PASS" starttime="20220620 22:04:15.112" endtime="20220620 22:04:15.193"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="password"]</arg>
+<arg>${notFilling_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220620 22:04:15.209" level="INFO">Typing text '' into text field '//input[@id="password"]'.</msg>
+<status status="PASS" starttime="20220620 22:04:15.193" endtime="20220620 22:04:15.287"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@type="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220620 22:04:15.289" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20220620 22:04:15.288" endtime="20220620 22:04:15.363"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>//img[@id="menu-logo"]</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<msg timestamp="20220620 22:04:15.381" level="INFO">Element '//img[@id="menu-logo"]' did not exist.</msg>
+<status status="PASS" starttime="20220620 22:04:15.364" endtime="20220620 22:04:15.382"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220620 22:04:15.383" endtime="20220620 22:04:17.610"/>
+</kw>
+<status status="PASS" starttime="20220620 22:04:11.231" endtime="20220620 22:04:17.610"/>
+</test>
+<status status="PASS" starttime="20220620 22:03:28.451" endtime="20220620 22:04:17.617"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
